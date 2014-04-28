@@ -1,4 +1,4 @@
-%define THEATERS_COUNT 4 ; old is 3
+%define THEATERS_COUNT 6 ; old is 3
 
 @JMP 0x00434690 _TheaterNameStart_Update1
 @JMP 0x00434765 _TheaterNameStart_Update2
