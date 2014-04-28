@@ -22,7 +22,22 @@ _Theaters_Init_Code_Update3:
     mov     eax, 0x00433C34
     call    0x00433E6C
     mov     [DesertMix], eax
+    
+    push    str_WinterMix
+    mov     ecx, [0x00469360]
+    mov     dl, 1
+    mov     eax, 0x00433C34
+    call    0x00433E6C
+    mov     [WinterMix], eax
+    
+    push    str_JungleMix
+    mov     ecx, [0x00469360]
+    mov     dl, 1
+    mov     eax, 0x00433C34
+    call    0x00433E6C
+    mov     [JungleMix], eax
 
+.Ret:
     push    0x004384AC ; offset aTemperat_mix ; "\ftemperat.mix"
     jmp     0x00438166
 
@@ -38,7 +53,32 @@ _Theaters_Init_Code_Update2:
     mov     eax, 0x433C34
     call    0x00433CB0
     mov     [DesertMix], eax
+    
+    lea     edx, [ebp-0x200]
+    lea     eax, [ebp-0x300]
+    call    0x00402AF8
+    mov     edx, str_JungleMix
+    lea     eax, [ebp-0x300]
+    call    0x00402AA0
+    lea     ecx, [ebp-0x300]
+    mov     dl, 1
+    mov     eax, 0x433C34
+    call    0x00433CB0
+    mov     [JungleMix], eax
+    
+    lea     edx, [ebp-0x200]
+    lea     eax, [ebp-0x300]
+    call    0x00402AF8
+    mov     edx, str_WinterMix
+    lea     eax, [ebp-0x300]
+    call    0x00402AA0
+    lea     ecx, [ebp-0x300]
+    mov     dl, 1
+    mov     eax, 0x433C34
+    call    0x00433CB0
+    mov     [WinterMix], eax
 
+.Ret:
     lea     edx, [ebp-0x200]
     jmp     0x00437FBE
 
@@ -51,6 +91,10 @@ _Theaters_Init_Code_Update1:
     jz      0x0043621C
     cmp     ebx, 3
     jz      .Desert_Theater
+    cmp     ebx, 4
+    jz      .Winter_Theater
+    cmp     ebx, 5
+    jz      .Jungle_Theater
     
     jmp     0x00436224
 
@@ -58,6 +102,16 @@ _Theaters_Init_Code_Update1:
     mov     eax, [DesertMix]
     mov     [ebp-0xC], eax
     jmp     0x00436224
+
+.Winter_Theater:
+    mov     eax, [WinterMix]
+    mov     [ebp-0xC], eax
+    jmp     0x00436224
+
+.Jungle_Theater:
+    mov     eax, [JungleMix]
+    mov     [ebp-0xC], eax
+    jmp     0x00436224    
 
 
 _Theaters_Count_Update5:

@@ -32,22 +32,22 @@ DesertTheaterExtensionStart: db 3 ; length byte, pascal string
 DesertTheaterExtensionName: db"DES"
 
 WinterTheaterStart: db 6 ; length byte, pascal string
-WinterTheaterName: db "DESERT"
+WinterTheaterName: db "WINTER"
 WinterTheaterPadding: db 0,0,0
-DesertTheaterMIXStart: db 6 ; length byte, pascal string
-DesertTheaterMIXName: db"DESERT"
-DesertTheaterMIXPadding: db 0,0
-DesertTheaterExtensionStart: db 3 ; length byte, pascal string
-DesertTheaterExtensionName: db"DES"
+WinterTheaterMIXStart: db 6 ; length byte, pascal string
+WinterTheaterMIXName: db"WINTER"
+WinterTheaterMIXPadding: db 0,0
+WinterTheaterExtensionStart: db 3 ; length byte, pascal string
+WinterTheaterExtensionName: db"WIN"
 
-DesertTheaterStart: db 6 ; length byte, pascal string
-DesertTheaterName: db "DESERT"
-DesertTheaterPadding: db 0,0,0
-DesertTheaterMIXStart: db 6 ; length byte, pascal string
-DesertTheaterMIXName: db"DESERT"
-DesertTheaterMIXPadding: db 0,0
-DesertTheaterExtensionStart: db 3 ; length byte, pascal string
-DesertTheaterExtensionName: db"DES"
+JungleTheaterStart: db 6 ; length byte, pascal string
+JungleTheaterName: db "JUNGLE"
+JungleTheaterPadding: db 0,0,0
+JungleTheaterMIXStart: db 6 ; length byte, pascal string
+JungleTheaterMIXName: db"JUNGLE"
+JungleTheaterMIXPadding: db 0,0
+JungleTheaterExtensionStart: db 3 ; length byte, pascal string
+JungleTheaterExtensionName: db"JUN"
 
 
 DesertMix dd 0
